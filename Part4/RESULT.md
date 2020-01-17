@@ -2,34 +2,34 @@
 ### C:
 
     void* incrementingThreadFunction(){
-    for (int j = 0; j < 999999; j++) {
-        i++;
-      }
-      return NULL;
-    }
-
-    void* decrementingThreadFunction(){
       for (int j = 0; j < 999999; j++) {
-        i--;
+          i++;
+        }
+        return NULL;
       }
-      return NULL;
-  }
+
+      void* decrementingThreadFunction(){
+        for (int j = 0; j < 999999; j++) {
+          i--;
+        }
+        return NULL;
+      }
 
 >Using void* as return type.
 
-    int main(){
-      pthread_t incrementingThread;
-      pthread_t decrementingThread;
+      int main(){
+        pthread_t incrementingThread;
+        pthread_t decrementingThread;
 
-      pthread_create(&incrementingThread, NULL, incrementingThreadFunction, NULL);
-      pthread_create(&decrementingThread, NULL, decrementingThreadFunction, NULL);
+        pthread_create(&incrementingThread, NULL, incrementingThreadFunction, NULL);
+        pthread_create(&decrementingThread, NULL, decrementingThreadFunction, NULL);
 
-      pthread_join(incrementingThread, NULL);
-      pthread_join(decrementingThread, NULL);
+        pthread_join(incrementingThread, NULL);
+        pthread_join(decrementingThread, NULL);
 
-      printf("The magic number is: %d\n", i);
-      return 0;
-    }
+        printf("The magic number is: %d\n", i);
+        return 0;
+      }
 
 >pthread_join blocking the thread.
 >The augment terminates -> decrementing
@@ -38,27 +38,28 @@
 
 ### Go:
 
-    func incrementing() {
-    for j := 0; j < 1000000; j++ {
-      i++
-    }
-  }
+      func incrementing() {
+        for j := 0; j < 1000000; j++ {
+          i++
+        }
+      }
 
-    func decrementing() {
-    for j := 0; j < 1000000; j++ {
-      i--
-    }
-  }
+      func decrementing() {
+        for j := 0; j < 1000000; j++ {
+          i--
+        }
+      }
 
-    func main() {
-      runtime.GOMAXPROCS(runtime.NumCPU())   
-	     time.Sleep(10 * time.Millisecond)
-	      go decrementing()
-        time.Sleep(100*time.Millisecond)
-        Println("The magic number is:", i)
-}
+      func main() {
+          runtime.GOMAXPROCS(runtime.NumCPU())   
+	        time.Sleep(10 * time.Millisecond)
+	        go decrementing()
+          time.Sleep(100*time.Millisecond)
+          Println("The magic number is:", i)
+        }
 
 >runtime.GOMAXPROCS(runtime.NumCPU())  ->  hindrer at flere CPU kjører samtidig
+>the sleep function force the program to wait for the thread to terminate
 
 
 ### Python:
@@ -89,3 +90,5 @@
 
 
     main
+
+>works almost the same as the two others.
