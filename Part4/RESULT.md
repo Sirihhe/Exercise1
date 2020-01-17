@@ -42,13 +42,13 @@
         for j := 0; j < 1000000; j++ {
           i++
         }
-      }
+        }
 
       func decrementing() {
         for j := 0; j < 1000000; j++ {
           i--
         }
-      }
+        }
 
       func main() {
           runtime.GOMAXPROCS(runtime.NumCPU())   
@@ -56,7 +56,7 @@
 	        go decrementing()
           time.Sleep(100*time.Millisecond)
           Println("The magic number is:", i)
-        }
+          }
 
 >runtime.GOMAXPROCS(runtime.NumCPU())  ->  hindrer at flere CPU kjører samtidig
 >the sleep function force the program to wait for the thread to terminate
