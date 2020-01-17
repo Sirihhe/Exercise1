@@ -10,7 +10,7 @@ void* incrementingThreadFunction(){
   }
     return NULL;
 }
-//test
+
 void* decrementingThreadFunction(){
   for (int j = 0; j < 999999; j++) {
       i--;
