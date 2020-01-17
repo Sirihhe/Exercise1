@@ -1,5 +1,6 @@
 
-<<<<<<< HEAD
+###C
+
   void* incrementingThreadFunction(){
     for (int j = 0; j < 999999; j++) {
         i++;
@@ -14,7 +15,7 @@
       return NULL;
   }
 
-Using void* as return type.
+>Using void* as return type.
 
   int main(){
       pthread_t incrementingThread;
@@ -30,10 +31,10 @@ Using void* as return type.
       return 0;
     }
 
-pthread_join blocking the thread.
-The augment terminates -> decrementing
-incrementing must finish.
-incrementingThread; pthread_t decrementingThread;
+>pthread_join blocking the thread.
+>The augment terminates -> decrementing
+>incrementing must finish.
+>incrementingThread; pthread_t decrementingThread;
 
 ### Go:
 
@@ -57,7 +58,7 @@ incrementingThread; pthread_t decrementingThread;
         Println("The magic number is:", i)
 }
 
-runtime.GOMAXPROCS(runtime.NumCPU())  ->  hindrer at flere CPU kjører samtidig
+>runtime.GOMAXPROCS(runtime.NumCPU())  ->  hindrer at flere CPU kjører samtidig
 
 
 ### Python:
@@ -87,6 +88,4 @@ runtime.GOMAXPROCS(runtime.NumCPU())  ->  hindrer at flere CPU kjører samtidig
       print("The magic number is %d" % (i))
 
 
-    main()
-=======
->>>>>>> a0d32169cb9accdc66db1c589702b3a27c052417
+    main
