@@ -1,5 +1,5 @@
-### C:
 
+<<<<<<< HEAD
   void* incrementingThreadFunction(){
     for (int j = 0; j < 999999; j++) {
         i++;
@@ -88,3 +88,5 @@ runtime.GOMAXPROCS(runtime.NumCPU())  ->  hindrer at flere CPU kjører samtidig
 
 
     main()
+=======
+>>>>>>> a0d32169cb9accdc66db1c589702b3a27c052417
