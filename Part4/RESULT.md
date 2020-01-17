@@ -1,7 +1,7 @@
 
 ### C:
 
-  void* incrementingThreadFunction(){
+    void* incrementingThreadFunction(){
     for (int j = 0; j < 999999; j++) {
         i++;
       }
@@ -17,7 +17,7 @@
 
 >Using void* as return type.
 
-  int main(){
+    int main(){
       pthread_t incrementingThread;
       pthread_t decrementingThread;
 
@@ -38,19 +38,19 @@
 
 ### Go:
 
-  func incrementing() {
+    func incrementing() {
     for j := 0; j < 1000000; j++ {
       i++
     }
   }
 
-  func decrementing() {
+    func decrementing() {
     for j := 0; j < 1000000; j++ {
       i--
     }
   }
 
-  func main() {
+    func main() {
       runtime.GOMAXPROCS(runtime.NumCPU())   
 	     time.Sleep(10 * time.Millisecond)
 	      go decrementing()
@@ -62,19 +62,19 @@
 
 
 ### Python:
-  def incrementingFunction():
+
+    def incrementingFunction():
       global i
       for j in range(1000000):
           i = i + 1
-
-        def decrementingFunction():
+    def decrementingFunction():
       global i
       for j in range(1000000):
           i = i - 1
 
 
 
-        def main():
+    def main():
 
       incrementing = Thread(target = incrementingFunction, args = (),)
       decrementing = Thread(target = decrementingFunction, args = (),)
