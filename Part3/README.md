@@ -17,10 +17,8 @@ The difference between concurrency and parallelism is that concurrency is about 
  ### What kinds of problems motivates the need for concurrent execution?
  (Or phrased differently: What problems do concurrency help in solving?)
  > Pthread_create() create a new thread.
-
-Threading.thread() create a new thread.
-
-Go create a coroutine.
+ Threading.thread() create a new thread.
+ Go create a coroutine.
 
  
  ### Does creating concurrent programs make the programmer's life easier? Harder? Maybe both?
